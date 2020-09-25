@@ -2,7 +2,9 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
 
 class UserAccountManager(BaseUserManager):
-    """" Creation Super User """"
+    """
+    Creation Super User
+    """
     def create_user(self, email, name, password=None):
         if not email:
             raise ValueError('Users must have an email address')
@@ -25,7 +27,9 @@ class UserAccountManager(BaseUserManager):
         return user
 
 class UserAccount(AbstractBaseUser, PermissionsMixin):
-  """" Creation User Account """"
+    """
+    Create Custom User
+    """
     email = models.EmailField(max_length=50, unique=True)
     name = models.CharField(max_length=50)
     is_active = models.BooleanField(default=True)
