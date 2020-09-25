@@ -2,6 +2,9 @@ from django.db import models
 from datetime import datetime
 
 class Car_dealers(models.Model):
+    """
+    Creation Car_dealer
+    """
     name = models.CharField(max_length=50)
     photo = models.ImageField(upload_to='photos/%Y/%m/%d/')
     description = models.TextField(blank=True)
