@@ -1,3 +1,4 @@
+import uuid
 from django.db import models
 from django.utils.timezone import now
 from car_dealers.models import Car_dealers
@@ -12,6 +13,7 @@ class Cars(models.Model):
     
 
     car_dealer = models.ForeignKey(Car_dealers, on_delete=models.DO_NOTHING)
+    id = models.UUIDField(max_length=800, editable=False)
     title = models.CharField(max_length=150)
     year = models.IntegerField(max_length=4)
     city = models.CharField(max_length=100)
